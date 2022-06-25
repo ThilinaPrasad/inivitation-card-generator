@@ -1,0 +1,83 @@
+body {
+    background: #222;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+    font-family: sans-serif;
+    padding-bottom: 3em;
+  }
+
+  .main-header {
+    margin-top: 50px;
+  }
+  
+  .y-index {
+    margin: auto!important;
+  }
+  .page-wrap {
+    display: inline-block;
+  }
+  
+  .controls__input {
+    display: block;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+    outline: none;
+    color: #fff;
+  }
+  .controls__btn {
+    background: dodgerblue;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+  }
+  .controls__label {
+    display: block;
+    font-size: 0.8em;
+    padding-top: 0.3em;
+    margin-bottom: 2em;
+  }
+  
+  canvas {
+    background-color: #eee;
+    transition: opacity 0.3s;
+  }
+  canvas.show {
+    opacity: 1;
+  }
+  
+  #canvas-wrap {
+    margin-top: 50px;
+  }
+  
+  #canvasID {
+    z-index: 9999;
+  }
+
+  #imageCanvas {
+    width: 914;
+    height:1280;
+  }
+
+
+  .download-btn {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 3px solid white;
+    font-weight: bold;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .download-btn:hover {
+    background-color: #fff;
+    color: #222;
+  }
