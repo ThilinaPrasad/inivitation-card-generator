@@ -1,4 +1,5 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
 var canvas = document.getElementById("imageCanvas");
 var ctx = canvas.getContext("2d");
 var img = new Image();
@@ -7,14 +8,15 @@ var name_x = 0;
 var name_y = 290;
 var invitee = "Invitee Name Here";
 
-
 window.addEventListener("load", DrawPlaceholder);
+
 
 function DrawPlaceholder() {
   img.src = "img/template.png";
   canvas.width = img.width;
   canvas.height = img.height;
   img.onload = function () {
+    authenticate()
     DrawOverlay(img);
     DrawText(invitee);
     DynamicText(img);
@@ -32,7 +34,7 @@ function DrawText() {
   ctx.textBaseline = "middle";
   ctx.font = "13px 'Montserrat'";
   ctx.textAlign = "center";
-  name_x = img.width/2;
+  name_x = img.width / 2;
   ctx.fillText(invitee, name_x, name_y);
 }
 
@@ -41,7 +43,7 @@ function DynamicText(img) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     DrawOverlay(img);
     if (this.value) {
-        invitee = this.value;
+      invitee = this.value;
     } else {
       invitee = "Invitee Name Here";
     }
@@ -51,7 +53,24 @@ function DynamicText(img) {
 }
 
 function DynamicDownload() {
-    let downloadBtn = document.getElementById("download");
-    downloadBtn.setAttribute("href", canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
-    downloadBtn.setAttribute("download", invitee + ".png")
+  let downloadBtn = document.getElementById("download");
+  downloadBtn.setAttribute(
+    "href",
+    canvas.toDataURL("image/png").replace("image/png", "image/octet-stream")
+  );
+  downloadBtn.setAttribute("download", invitee + ".png");
+}
+
+
+
+document.getElementById("password").addEventListener("keyup", function () {
+  authenticate(this.value);
+});
+
+function authenticate(password) {
+  if (sessionStorage.getItem("auth") || password === "invite") {
+    sessionStorage.setItem("auth", true);
+    document.getElementById("password-wrap").style.display = "none";
+    document.getElementById("protected-wrap").style.display = "inline-block";
+  }
 }

@@ -5,8 +5,14 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<h1 class="main-header">Invitation Card Generator</h1>
-<div class="page-wrap">
+  <h1 class="main-header">Invitation Card Generator</h1>
+  <div id="password-wrap">
+    <div class="controls password">
+      <input class="controls__input" id="password" type="password"/>
+      <label class="controls__label" for="password">Password</label>
+  </div>
+  </div>
+<div class="page-wrap protected" id="protected-wrap">
   <div class="controls">
     <input class="controls__input" id="name" type="text" value=""/>
     <label class="controls__label" for="name">Invitee Name Here</label>
@@ -19,8 +25,6 @@
         <canvas id="canvasID"></canvas>
     </canvas> 
   </div>
-  
-</div>
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -81,3 +81,11 @@ body {
     background-color: #fff;
     color: #222;
   }
+
+  .protected {
+    display: none;
+  }
+
+  .password-wrap {
+    top: 30vh;
+  }
