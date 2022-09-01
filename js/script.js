@@ -5,14 +5,14 @@ var ctx = canvas.getContext("2d");
 var img = new Image();
 img.crossOrigin = "anonymous";
 var name_x = 0;
-var name_y = 290;
+var name_y = 870;
 var invitee = "Invitee Name Here";
 
 window.addEventListener("load", DrawPlaceholder);
 
 
 function DrawPlaceholder() {
-  img.src = "img/template.png";
+  img.src = "img/template.jpg";
   canvas.width = img.width;
   canvas.height = img.height;
   img.onload = function () {
@@ -32,7 +32,7 @@ function DrawOverlay(img) {
 function DrawText() {
   ctx.fillStyle = "#3d6a39";
   ctx.textBaseline = "middle";
-  ctx.font = "13px 'Montserrat'";
+  ctx.font = "30px 'Montserrat'";
   ctx.textAlign = "center";
   name_x = img.width / 2;
   ctx.fillText(invitee, name_x, name_y);
