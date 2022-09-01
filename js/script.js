@@ -2,11 +2,14 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 var canvas = document.getElementById("imageCanvas");
 var ctx = canvas.getContext("2d");
-var img = new Image();
-img.crossOrigin = "anonymous";
 var name_x = 0;
 var name_y = 870;
 var invitee = "Invitee Name Here";
+
+// image obj
+var img = new Image();
+img.crossOrigin = "anonymous";
+img.src = "img/template.jpg";
 
 window.addEventListener("load", DrawPlaceholder);
 
@@ -16,12 +19,12 @@ function DrawPlaceholder() {
   canvas.width = img.width;
   canvas.height = img.height;
   img.onload = function () {
-    authenticate()
     DrawOverlay(img);
     DrawText(invitee);
     DynamicText(img);
     DynamicDownload();
   };
+  authenticate();
 }
 
 function DrawOverlay(img) {
